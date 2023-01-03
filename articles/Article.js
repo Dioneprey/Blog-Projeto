@@ -4,8 +4,8 @@ const Category = require("../categories/Category")
 
 const Article = connection.define('articles', {
     title: {
-    type: Sequelize.STRING,
-    allowNull: false
+        type: Sequelize.STRING,
+        allowNull: false
     },slug: {
         type: Sequelize.STRING,
         allowNull: false
@@ -17,7 +17,6 @@ const Article = connection.define('articles', {
 })
 Category.hasMany(Article) // Uma categoria tem muitos artigos
 Article.belongsTo(Category) // UM artigo pertence a uma categoria
-
 
 
 module.exports = Article
