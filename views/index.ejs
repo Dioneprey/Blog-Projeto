@@ -1,7 +1,40 @@
 <%- include ('./partials/header.ejs') %>
-<body>
-    <%- include ('./partials/navbar.ejs') %>
-    <h2>inicio</h2>
-</body>
 
-<%- include ('./partials/footer.ejs') %>
+    <body>
+        <%- include ('./partials/home-navbar.ejs') %>
+            <div class="container">
+                <hr>
+                <div class="jumbotron">
+                    <h1 class="display-4">Bem-vindo</h1>
+                    <p class="lead">Este é um simples blog feito para praticar programação.</p>
+                    <hr class="my-4">
+                    <p>Foi utilizado HTML, CSS, Bootstrap, JS/EJS, NodeJS e MySql</p>
+                    <a class="btn btn-dark btn-lg" href="https://github.com/Dioneprey" role="button">Github <i
+                            class="fa-brands fa-github"></i></a>
+                </div>
+
+                <% articles.forEach(article=> { %>
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>
+                                <%= article.title %>
+                            </h2>
+                        </div>
+                        <div class="card-body">
+                            <a href="/<%= article.slug %>" class="btn btn-primary">Ler artigo</a>
+                        </div>
+                    </div>
+                    <br>
+                    <% }) %>
+
+                        <div class="row">
+                            <div class="col col-12">
+                                <a href="/articles/page/2" style="float: right;">Next >>></a>
+                            </div>                            
+                            <hr>
+                        </div>
+                        <hr>
+            </div>
+    </body>
+
+    <%- include ('./partials/footer.ejs') %>
